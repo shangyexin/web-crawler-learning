@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @author : yasin
 # @time   : 2018/2/5 10:06
-# @File   : practice_1.py
+# @File   : urllib_practice1.py
 
 import socket
 import urllib.request
@@ -132,6 +132,32 @@ def demo_parse():
     result = urlparse("http://www.baidu.com/index.html;user?id=5#comment")
     print(result)
 
+def demo_unparse():
+    from urllib.parse import urlunparse
+    data = ['http', 'www.baidu.com', 'index.html', 'user', 'a=123', 'commit']
+    print(urlunparse(data))
+
+def demo_urljoin():
+    from urllib.parse import urljoin
+    print(urljoin('http://www.baidu.com', 'FAQ.html'))
+    print(urljoin('http://www.baidu.com', 'https://pythonsite.com/FAQ.html'))
+    print(urljoin('http://www.baidu.com/about.html', 'https://pythonsite.com/FAQ.html'))
+    print(urljoin('http://www.baidu.com/about.html', 'https://pythonsite.com/FAQ.html?question=2'))
+    print(urljoin('http://www.baidu.com?wd=abc', 'https://pythonsite.com/index.php'))
+    print(urljoin('http://www.baidu.com', '?category=2#comment'))
+    print(urljoin('www.baidu.com', '?category=2#comment'))
+    print(urljoin('www.baidu.com#comment', '?category=2'))
+
+def demo_urlencode():
+    from urllib.parse import urlencode
+    params = {
+        "name":"zhaofan",
+        "age":23
+    }
+    base_url = "http://www.baidu.com?"
+    url = base_url + urlencode(params)
+    print(url)
+
 if __name__ == '__main__':
     # demo1()
     # demo2()
@@ -144,4 +170,7 @@ if __name__ == '__main__':
     # demo_cookie3()
     # demo_error()
     # demo_error2()
-    demo_parse()
+    # demo_parse()
+    # demo_unparse()
+    # demo_urljoin()
+    demo_urlencode()

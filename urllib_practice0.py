@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @author : yasin
 # @time   : 2018/2/1 14:07
-# @File   : parctice_0.py
+# @File   : urllib_practice0.py
 
 from urllib import request, parse
 
