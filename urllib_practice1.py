@@ -40,7 +40,7 @@ def demo4():
         'HOST': 'httpbin.org'
     }
     dict = {
-        'name': 'zhaofan'
+        'name': 'leijun'
     }
     data = bytes(urllib.parse.urlencode(dict), encoding='utf-8')
     req = urllib.request.Request(url=url, data=data, headers=headers, method='POST')
@@ -151,7 +151,7 @@ def demo_urljoin():
 def demo_urlencode():
     from urllib.parse import urlencode
     params = {
-        "name":"zhaofan",
+        "name":"leijun",
         "age":23
     }
     base_url = "http://www.baidu.com?"

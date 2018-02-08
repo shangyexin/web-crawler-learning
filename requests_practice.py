@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @author : yasin
 # @time   : 2018/2/5 15:13
-# @File   : requests_practice0.py
+# @File   : requests_practice.py
 
 import requests
 import json
@@ -34,7 +34,7 @@ def demo2():
 # 基本GET请求
 def demo3():
     data = {
-        "name": "zhaofan",
+        "name": "leijun",
         "age": 22
     }
     response = requests.get("http://httpbin.org/get", params=data)
@@ -60,7 +60,7 @@ def demo5():
 # 基本POST请求
 def demo6():
     data = {
-        "name": "zhaofan",
+        "name": "leijun",
         "age": 23
     }
     response = requests.post("http://httpbin.org/post", data=data)
@@ -76,6 +76,33 @@ def demo7():
     print(type(response.url), response.url)
     print(type(response.history), response.history)
 
+# 文件上传
+def demo8():
+    files = {"files": open("touxiang.jpg", "rb")}
+    response = requests.post("http://httpbin.org/post", files=files)
+    print(response.text)
+
+# 获取cookie
+def demo9():
+    response = requests.get("http://www.baidu.com")
+    print(response.cookies)
+    for key, value in response.cookies.items():
+        print(key + "=" + value)
+
+# 会话维持
+def demo10():
+    s = requests.Session()
+    s.get("http://httpbin.org/cookies/set/number/123456")
+    response = s.get("http://httpbin.org/cookies")
+    print(response.text)
+
+# 证书验证
+def demo11():
+    from requests.packages import urllib3
+    urllib3.disable_warnings()
+    response = requests.get("https://www.12306.cn", verify=False)
+    print(response.status_code)
+
 if __name__ == '__main__':
     # demo1()
     # demo2()
@@ -83,4 +110,9 @@ if __name__ == '__main__':
     # demo4()
     # demo5()
     # demo6()
-    demo7()
+    # demo7()
+    # demo8()
+    # demo9()
+    # demo10()
+    demo11()
+    # demo12()
