@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @author : yasin
-# @time   : 2018/2/7 9:54
+# @time   : 2018/2/7 18:54
 # @File   : regex_practice.py
 
 import re

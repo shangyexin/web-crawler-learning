@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @author : yasin
-# @time   : 2018/2/5 10:06
+# @time   : 2018/2/5 20:06
 # @File   : urllib_practice1.py
 
 import socket

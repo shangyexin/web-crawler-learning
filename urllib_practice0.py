@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # @author : yasin
-# @time   : 2018/2/1 14:07
+# @time   : 2018/2/1 18:07
 # @File   : urllib_practice0.py
 
 from urllib import request, parse
